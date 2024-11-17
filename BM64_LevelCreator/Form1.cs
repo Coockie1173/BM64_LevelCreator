@@ -99,7 +99,16 @@ namespace BM64_LevelCreator
             // and load the first map from it for something to draw
             String filename = GlobalData.collision_files[this.MapNames_ComboBox.Text];
             String filepath = GlobalData.BM64_CollisionDir + filename;
-            current_map.load_CollisionBIN(filepath);
+            if (System.IO.File.Exists(filepath))
+            {
+                current_map.load_CollisionBIN(filepath);
+            }
+            else
+            {
+                current_map.reset_map();
+                change_selected_layer(0);
+                RefreshVisuals();
+            }
 
             // init the texture stuff
             Tile.read_tex_config_file();
