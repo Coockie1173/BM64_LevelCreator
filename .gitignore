@@ -421,3 +421,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /bm64data
+/BM64_LevelCreator/obj/Debug/BM64_LevelCreator.csproj.FileListAbsolute.txt
